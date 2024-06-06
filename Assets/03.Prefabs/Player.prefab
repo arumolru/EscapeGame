@@ -159,3 +159,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c67efd2b1c0a1ec43a1e5efade9e061c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clearUI: {fileID: 0}
+  portalAudio: {fileID: 0}
+  jumpAudio: {fileID: 0}

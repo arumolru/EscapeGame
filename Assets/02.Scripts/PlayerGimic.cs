@@ -8,6 +8,14 @@ public class PlayerGimic : MonoBehaviour
 
     private float upSpeed = 6f;
 
+    [SerializeField]
+    private GameObject clearUI;
+
+    [SerializeField]
+    private AudioSource portalAudio;
+    [SerializeField]
+    private AudioSource jumpAudio;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -22,7 +30,11 @@ public class PlayerGimic : MonoBehaviour
 
         if(other.gameObject.CompareTag("PORTAL"))
         {
-            Destroy(gameObject);
+            clearUI.SetActive(true);
+
+            Time.timeScale = 0;
+
+            portalAudio.Play();
         }
     }
 
@@ -31,6 +43,8 @@ public class PlayerGimic : MonoBehaviour
         if(collision.gameObject.CompareTag("UPWALL"))
         {
             rb.AddForce(upSpeed * Vector3.up, ForceMode.Impulse);
+
+            jumpAudio.Play();
         }
     }
 }

@@ -6,19 +6,13 @@ public class PlayerCtrl : MonoBehaviour
 {
     private float moveSpeed = 3f;
 
-    private float rotateSpeed = 80f;
+    private float rotateSpeed = 100f;
 
     private void FixedUpdate()
     {
         Move();
 
         Turn();
-
-        if (Input.GetKey(KeyCode.LeftShift))
-            Dash();
-
-        if(Input.GetKeyUp(KeyCode.LeftShift))
-            moveSpeed = 3f;
     }
 
     void Move()
@@ -38,10 +32,5 @@ public class PlayerCtrl : MonoBehaviour
         Vector3 rotate = new Vector3(0, Time.deltaTime * rotateSpeed * mouseX, 0);
 
         transform.Rotate(rotate);
-    }    
-
-    void Dash()
-    {
-        moveSpeed = 6f;
-    }
+    } 
 }
