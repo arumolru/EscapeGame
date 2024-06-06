@@ -105,8 +105,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5b11e82869d24c842a0c0ede1503bc6f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  target: {fileID: 0}
-  distance: 3
-  height: 1.5
-  rotationDamping: 3
-  heightDamping: 2
+  target: {fileID: 3902010981734212798, guid: 39599b73208958642aabfcf80aa89e03, type: 3}

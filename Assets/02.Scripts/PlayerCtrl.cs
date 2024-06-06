@@ -4,16 +4,9 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    Animator anim;
-
     private float moveSpeed = 3f;
 
-    public float rotateSpeed = 80f;
-
-    private void Start()
-    {
-        anim= GetComponent<Animator>();
-    }
+    private float rotateSpeed = 80f;
 
     private void FixedUpdate()
     {

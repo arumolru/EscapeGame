@@ -4,9 +4,23 @@ using UnityEngine;
 
 public class PlayerGimic : MonoBehaviour
 {
+    Rigidbody rb;
+
+    private float upSpeed = 6f;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
+
     private void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.CompareTag("TRAPWALL"))
+        {
+            Destroy(gameObject);
+        }
+
+        if(other.gameObject.CompareTag("PORTAL"))
         {
             Destroy(gameObject);
         }
@@ -16,7 +30,7 @@ public class PlayerGimic : MonoBehaviour
     {
         if(collision.gameObject.CompareTag("UPWALL"))
         {
-            transform.Translate(transform.position + Vector3.up);
+            rb.AddForce(upSpeed * Vector3.up, ForceMode.Impulse);
         }
     }
 }

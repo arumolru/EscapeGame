@@ -6,6 +6,10 @@ TagManager:
   tags:
   - CinemachineTarget
   - TRAPWALL
+  - UPWALL
+  - DELETEWALL
+  - PLAYER
+  - PORTAL
   layers:
   - Default
   - TransparentFX
