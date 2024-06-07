@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class CameraMove : MonoBehaviour
 {
-    RaycastHit hit;
-
     [SerializeField]
     private Transform target;
 
