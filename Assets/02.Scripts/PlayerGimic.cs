@@ -16,6 +16,8 @@ public class PlayerGimic : MonoBehaviour
     [SerializeField]
     private AudioSource jumpAudio;
 
+    static public bool isCleared = false;
+
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
@@ -31,6 +33,7 @@ public class PlayerGimic : MonoBehaviour
         if(other.gameObject.CompareTag("PORTAL"))
         {
             clearUI.SetActive(true);
+            isCleared = true;
 
             Time.timeScale = 0;
 
