@@ -30,7 +30,7 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if(Input.GetKeyDown(KeyCode.Escape) && !PlayerGimic.isCleared)
+        if(Input.GetKeyDown(KeyCode.Escape) && !PlayerGimic.isCleared && !PlayerGimic.isfailed)
         {
             pauseUI.SetActive(true);
 
@@ -112,6 +112,7 @@ public class GameManager : MonoBehaviour
     public void RealRetry()
     {
         buttonSound.Play();
+        PlayerGimic.isfailed = false;
 
         Time.timeScale = 1;
         SceneManager.LoadScene("Stage" + stageLevel + "-" + stageDetailLevel);

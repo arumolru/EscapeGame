@@ -10,13 +10,18 @@ public class PlayerGimic : MonoBehaviour
 
     [SerializeField]
     private GameObject clearUI;
+    [SerializeField]
+    private GameObject failedUI;
 
     [SerializeField]
     private AudioSource portalAudio;
     [SerializeField]
     private AudioSource jumpAudio;
+    [SerializeField]
+    private AudioSource trapAudio;
 
     static public bool isCleared = false;
+    static public bool isfailed = false;
 
     private void Start()
     {
@@ -27,7 +32,11 @@ public class PlayerGimic : MonoBehaviour
     {
         if(other.gameObject.CompareTag("TRAPWALL"))
         {
-            Destroy(gameObject);
+            isfailed = true;
+
+            failedUI.SetActive(true);
+
+            Time.timeScale = 0;
         }
 
         if(other.gameObject.CompareTag("PORTAL"))

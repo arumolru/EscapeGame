@@ -13,6 +13,16 @@ public class PlayerCtrl : MonoBehaviour
         Move();
 
         Turn();
+
+        if(Input.GetKey(KeyCode.LeftShift))
+        {
+            Dash();
+        }
+
+        if(Input.GetKeyUp(KeyCode.LeftShift))
+        {
+            moveSpeed = 3f;
+        }
     }
 
     void Move()
@@ -33,4 +43,9 @@ public class PlayerCtrl : MonoBehaviour
 
         transform.Rotate(rotate);
     } 
+
+    void Dash()
+    {
+        moveSpeed = 6f;
+    }
 }
