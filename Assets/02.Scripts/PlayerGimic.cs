@@ -30,7 +30,7 @@ public class PlayerGimic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.CompareTag("TRAPWALL"))
+        if(other.gameObject.CompareTag("TRAPWALL") || other.gameObject.CompareTag("FALLGROUND"))
         {
             isfailed = true;
 

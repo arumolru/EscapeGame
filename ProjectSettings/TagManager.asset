@@ -10,6 +10,7 @@ TagManager:
   - DELETEWALL
   - PLAYER
   - PORTAL
+  - FALLGROUND
   layers:
   - Default
   - TransparentFX

@@ -7,11 +7,11 @@ public class CameraMove : MonoBehaviour
     [SerializeField]
     private Transform target;
 
-    private float distance = 3f;
-    private float height = 1.5f;
+    public float distance = 3f;
+    public float height = 1.5f;
 
-    private float rotationDamping = 3.0f;
-    private float heightDamping = 2.0f;
+    public float rotationDamping = 3.0f;
+    public float heightDamping = 2.0f;
 
     void LateUpdate()
     {
