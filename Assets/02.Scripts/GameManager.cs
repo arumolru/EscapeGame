@@ -44,6 +44,11 @@ public class GameManager : MonoBehaviour
 
         SceneManager.LoadScene("Stage" + stageLevel + "-" + (stageDetailLevel + 1));
 
+        if (stageDetailLevel == 10)
+        {
+            SceneManager.LoadScene("Stage" + (stageLevel + 1) + "-" + 1);
+        }
+
         Time.timeScale = 1;
     }
 

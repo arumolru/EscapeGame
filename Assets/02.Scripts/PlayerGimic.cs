@@ -6,7 +6,7 @@ public class PlayerGimic : MonoBehaviour
 {
     Rigidbody rb;
 
-    private float upSpeed = 6f;
+    private float upSpeed = 7f;
 
     [SerializeField]
     private GameObject clearUI;
@@ -19,6 +19,9 @@ public class PlayerGimic : MonoBehaviour
     private AudioSource jumpAudio;
     [SerializeField]
     private AudioSource trapAudio;
+
+    public int stageLevel;
+    public int stageDetailLevel;
 
     static public bool isCleared = false;
     static public bool isfailed = false;
