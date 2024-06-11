@@ -36,6 +36,15 @@ public class GameManager : MonoBehaviour
 
             Time.timeScale = 0;
         }
+
+        if(PlayerGimic.isCleared)
+        {
+            if (stageDetailLevel != 10)
+            {
+                PlayerPrefs.SetInt("Stage" + stageLevel + "-" + stageDetailLevel + "Save", 1);
+                PlayerPrefs.Save();
+            }
+        }
     }
 
     public void NextStageButton()

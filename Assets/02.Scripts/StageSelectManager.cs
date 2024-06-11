@@ -8,9 +8,85 @@ public class StageSelectManager : MonoBehaviour
 {
     AudioSource buttonSound;
 
+    [SerializeField]
+    private GameObject[] stageSelect;
+    private int stageSelectIndex = 0;
+
+    [SerializeField]
+    private Button nextButton;
+    [SerializeField]
+    private Button beforeButton;
+
+    [SerializeField]
+    private Button[] stageButton;
+    private int totalStages = 20;
+
     private void Start()
     {
         buttonSound = GetComponent<AudioSource>();
+
+        UpdateStageButton();
+    }
+
+    private void Update()
+    {
+        if(stageSelectIndex==5)
+        {
+            nextButton.interactable = false;
+        }
+        else
+        {
+            nextButton.interactable = true;
+        }
+
+        if(stageSelectIndex==0)
+        {
+            beforeButton.interactable = false;
+        }
+        else
+        {
+            beforeButton.interactable = true;
+        }
+    }
+
+    void UpdateStageButton()
+    {
+        for (int i = 0; i < stageButton.Length; i++)
+        {
+            if (stageButton[i] != null)
+            {
+                // PlayerPrefs에서 저장된 스테이지 클리어 정보를 불러옵니다.
+                int stageLevel = (i / totalStages) + 1;
+                int stageDetailLevel = (i % totalStages) + 1;
+                int isCleared = PlayerPrefs.GetInt("Stage" + stageLevel + "-" + stageDetailLevel + "Save", 0);
+
+                // 저장된 값에 따라 버튼을 활성화/비활성화합니다.
+                if (isCleared == 1)
+                {
+                    stageButton[i].interactable = true;
+                }
+                else
+                {
+                    stageButton[i].interactable = false;
+                }
+            }
+        }
+    }
+
+    public void NextStage()
+    {
+            stageSelect[stageSelectIndex].SetActive(false);
+            stageSelect[stageSelectIndex + 1].SetActive(true);
+
+            stageSelectIndex += 1;
+    }
+
+    public void BeforeStage()
+    {
+        stageSelect[stageSelectIndex].SetActive(false);
+        stageSelect[stageSelectIndex - 1].SetActive(true);
+
+        stageSelectIndex -= 1;
     }
 
     public void Stage1_1()
