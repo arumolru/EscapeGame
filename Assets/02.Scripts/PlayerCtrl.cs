@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerCtrl : MonoBehaviour
 {
-    private float moveSpeed = 3f;
+    private float moveSpeed = 3f; // 플레이어의 이동 속도
 
-    private float rotateSpeed = 100f;
+    private float rotateSpeed = 100f; // 플레이어의 회전 속도
 
     private void FixedUpdate()
     {
@@ -17,6 +17,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void Move()
     {
+        // 플레이어 이동 코드
         float h = Input.GetAxisRaw("Horizontal");
         float v = Input.GetAxisRaw("Vertical");
 
@@ -27,6 +28,7 @@ public class PlayerCtrl : MonoBehaviour
 
     void Turn()
     {
+        // 플레이어의 회전 코드
         float mouseX = Input.GetAxis("Mouse X") * rotateSpeed * Time.deltaTime;
 
         Vector3 rotate = new Vector3(0, Time.deltaTime * rotateSpeed * mouseX, 0);
