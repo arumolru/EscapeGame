@@ -39,11 +39,8 @@ public class GameManager : MonoBehaviour
 
         if(PlayerGimic.isCleared)
         {
-            if (stageDetailLevel != 10)
-            {
-                PlayerPrefs.SetInt("Stage" + stageLevel + "-" + stageDetailLevel + "Save", 1);
-                PlayerPrefs.Save();
-            }
+            PlayerPrefs.SetInt("Stage" + stageLevel + "-" + stageDetailLevel + "Save", 1);
+            PlayerPrefs.Save();
         }
     }
 

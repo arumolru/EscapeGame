@@ -30,7 +30,7 @@ public class StageSelectManager : MonoBehaviour
 
     private void Update()
     {
-        if(stageSelectIndex==5)
+        if(stageSelectIndex==1)
         {
             nextButton.interactable = false;
         }
@@ -74,11 +74,13 @@ public class StageSelectManager : MonoBehaviour
     }
 
     public void NextStage()
-    {
-            stageSelect[stageSelectIndex].SetActive(false);
-            stageSelect[stageSelectIndex + 1].SetActive(true);
+    {       
+        stageSelect[stageSelectIndex].SetActive(false);
+        stageSelect[stageSelectIndex + 1].SetActive(true);
 
-            stageSelectIndex += 1;
+        stageSelectIndex += 1;
+
+        Debug.Log(stageSelectIndex);
     }
 
     public void BeforeStage()
@@ -87,6 +89,8 @@ public class StageSelectManager : MonoBehaviour
         stageSelect[stageSelectIndex - 1].SetActive(true);
 
         stageSelectIndex -= 1;
+
+        Debug.Log(stageSelectIndex);
     }
 
     public void Stage1_1()
@@ -147,5 +151,65 @@ public class StageSelectManager : MonoBehaviour
     {
         buttonSound.Play();
         SceneManager.LoadScene("Stage1-10");
+    }
+
+    public void Stage2_1()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-1");
+    }
+
+    public void Stage2_2()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-2");
+    }
+
+    public void Stage2_3()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-3");
+    }
+
+    public void Stage2_4()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-4");
+    }
+
+    public void Stage2_5()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-5");
+    }
+
+    public void Stage2_6()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-6");
+    }
+
+    public void Stage2_7()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-7");
+    }
+
+    public void Stage2_8()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-8");
+    }
+
+    public void Stage2_9()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-9");
+    }
+
+    public void Stage2_10()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage2-10");
     }
 }
