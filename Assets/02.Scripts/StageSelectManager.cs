@@ -19,7 +19,7 @@ public class StageSelectManager : MonoBehaviour
 
     [SerializeField]
     private Button[] stageButton;
-    private int totalStages = 20;
+    private int totalStages = 30;
 
     private void Start()
     {
@@ -30,7 +30,7 @@ public class StageSelectManager : MonoBehaviour
 
     private void Update()
     {
-        if(stageSelectIndex==1)
+        if(stageSelectIndex==2)
         {
             nextButton.interactable = false;
         }
@@ -211,5 +211,65 @@ public class StageSelectManager : MonoBehaviour
     {
         buttonSound.Play();
         SceneManager.LoadScene("Stage2-10");
+    }
+
+    public void Stage3_1()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-1");
+    }
+
+    public void Stage3_2()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-2");
+    }
+
+    public void Stage3_3()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-3");
+    }
+
+    public void Stage3_4()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-4");
+    }
+
+    public void Stage3_5()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-5");
+    }
+
+    public void Stage3_6()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-6");
+    }
+
+    public void Stage3_7()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-7");
+    }
+
+    public void Stage3_8()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-8");
+    }
+
+    public void Stage3_9()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-9");
+    }
+
+    public void Stage3_10()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage3-10");
     }
 }
