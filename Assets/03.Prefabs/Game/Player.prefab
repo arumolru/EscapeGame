@@ -160,5 +160,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   clearUI: {fileID: 0}
+  failedUI: {fileID: 0}
   portalAudio: {fileID: 0}
   jumpAudio: {fileID: 0}
+  trapAudio: {fileID: 0}
+  deleteAudio: {fileID: 0}
+  stageLevel: 1
+  stageDetailLevel: 10

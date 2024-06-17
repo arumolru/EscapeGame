@@ -19,6 +19,8 @@ public class PlayerGimic : MonoBehaviour
     private AudioSource jumpAudio; // 점프 블록을 밟았을 때의 사운드
     [SerializeField]
     private AudioSource trapAudio; // 트랩을 밟았을 때의 사운드
+    [SerializeField]
+    private AudioSource deleteAudio; // 하얀 블록을 밟았을 때의 사운드
 
     public int stageLevel; // 스테이지 레벨
     public int stageDetailLevel; // 스테이지의 세부 레벨
@@ -64,5 +66,18 @@ public class PlayerGimic : MonoBehaviour
 
             jumpAudio.Play(); // 사운드 재생
         }
+
+        // 플레이어가 하얀 블록을 밟았을 경우
+        if(collision.gameObject.CompareTag("DELETEWALL"))
+        {
+            StartCoroutine(DeleteSound());
+        }
+    }
+
+    IEnumerator DeleteSound()
+    {
+        yield return new WaitForSeconds(1f);
+
+        deleteAudio.Play(); // 사운드 재생
     }
 }

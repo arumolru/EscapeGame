@@ -58,3 +58,20 @@ The following packages were added:
   com.unity.test-framework@1.1.33
   com.unity.xr.legacyinputhelpers@2.1.10
   com.unity.ai.navigation@1.1.5
+
+=== Mon Jun 17 10:15:16 2024
+
+Packages were changed.
+Update Mode: updateDependencies
+
+The following packages were updated:
+  com.unity.shadergraph from version 12.1.7 to 14.0.9
+
+=== Mon Jun 17 10:15:16 2024
+
+Packages were changed.
+Update Mode: mergeDefaultDependencies
+
+The following packages were added:
+  com.unity.postprocessing@3.2.2
+  com.unity.shadergraph@14.0.9
