@@ -60,6 +60,8 @@ public class StageSelectManager : MonoBehaviour
                 int stageDetailLevel = (i % totalStages) + 1;
                 int isCleared = PlayerPrefs.GetInt("Stage" + stageLevel + "-" + stageDetailLevel + "Save", 0);
 
+                
+
                 // 저장된 값에 따라 버튼을 활성화/비활성화합니다.
                 if (isCleared == 1)
                 {
