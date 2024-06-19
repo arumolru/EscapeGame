@@ -1044,6 +1044,7 @@ MonoBehaviour:
   nextButton: {fileID: 1592351151}
   beforeButton: {fileID: 1087108440}
   stageButton:
+  - {fileID: 705733644}
   - {fileID: 667068386}
   - {fileID: 510303305}
   - {fileID: 843924698}

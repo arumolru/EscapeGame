@@ -19,7 +19,7 @@ public class StageSelectManager : MonoBehaviour
 
     [SerializeField]
     private Button[] stageButton;
-    private int totalStages = 30;
+    private int totalStages = 10;
 
     private void Start()
     {
@@ -51,25 +51,31 @@ public class StageSelectManager : MonoBehaviour
 
     void UpdateStageButton()
     {
-        for (int i = 0; i < stageButton.Length; i++)
+        // stageButton의 개수만큼 반복
+        for(int i= 0; i<stageButton.Length; i++)
         {
+            // 1-1스테이지 버튼은 상시 활성화
+            if (i == 0)
+            {
+                stageButton[i].interactable = true;
+                continue;
+            }
+
             if (stageButton[i] != null)
             {
-                // PlayerPrefs에서 저장된 스테이지 클리어 정보를 불러옵니다.
+                // 스테이지의 클리어 정보 가져오기
                 int stageLevel = (i / totalStages) + 1;
                 int stageDetailLevel = (i % totalStages) + 1;
-                int isCleared = PlayerPrefs.GetInt("Stage" + stageLevel + "-" + stageDetailLevel + "Save", 0);
+                int cleared = PlayerPrefs.GetInt("Stage" + stageLevel + "-" + stageDetailLevel + "Save", 0);
 
-                
-
-                // 저장된 값에 따라 버튼을 활성화/비활성화합니다.
-                if (isCleared == 1)
+                // 클리어 여부에 따라 스테이지 버튼 활성화
+                if (cleared == 1)
                 {
-                    stageButton[i].interactable = true;
+                    stageButton[i + 1].interactable = true;
                 }
                 else
                 {
-                    stageButton[i].interactable = false;
+                    stageButton[i + 1].interactable = false;
                 }
             }
         }

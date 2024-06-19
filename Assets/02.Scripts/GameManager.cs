@@ -51,6 +51,8 @@ public class GameManager : MonoBehaviour
     {
         buttonSound.Play(); // 사운드 재생
 
+        PlayerGimic.isCleared = false;
+
         SceneManager.LoadScene("Stage" + stageLevel + "-" + (stageDetailLevel + 1)); // 다음 스테이지 씬으로 이동
 
         // 만약 세부 스테이지 레벨이 10일 경우 스테이지 + 1 ex) 1-10을 클리어 하면 2-1로 이동
@@ -68,6 +70,8 @@ public class GameManager : MonoBehaviour
     {
         buttonSound.Play(); // 사운드 재생
 
+        PlayerGimic.isCleared = false;
+
         stageSelectReconfirm.SetActive(true); // 스테이지 선택창으로 가는지 재확인하는 UI 활성화
     }
 
@@ -75,6 +79,8 @@ public class GameManager : MonoBehaviour
     public void LobbyButton()
     {
         buttonSound.Play(); // 사운드 재생
+
+        PlayerGimic.isCleared = false;
 
         lobbyReconfirm.SetActive(true); // 로비창으로 가는지 재확인하는 UI활성화
     }
@@ -84,6 +90,8 @@ public class GameManager : MonoBehaviour
     public void RealStageSelect()
     {
         buttonSound.Play(); // 사운드 재생
+
+        PlayerGimic.isCleared = false;
 
         Time.timeScale = 1; // 일시정지 해제
 
@@ -95,6 +103,8 @@ public class GameManager : MonoBehaviour
     {
         buttonSound.Play(); // 사운드 재생
 
+        PlayerGimic.isCleared = false;
+
         stageSelectReconfirm.SetActive(false); // 스테이지 선택 재확인 UI 비활성화
     }
 
@@ -102,6 +112,8 @@ public class GameManager : MonoBehaviour
     public void RealLobby()
     {
         buttonSound.Play(); // 사운드 재생
+
+        PlayerGimic.isCleared = false;
 
         Time.timeScale = 1; // 일시정지 해제
 
@@ -113,6 +125,8 @@ public class GameManager : MonoBehaviour
     {
         buttonSound.Play(); // 사운드 재생
 
+        PlayerGimic.isCleared = false;
+
         lobbyReconfirm .SetActive(false); // 로비 재확인 UI 비활성화
     }
 
@@ -120,6 +134,8 @@ public class GameManager : MonoBehaviour
     public void ResumeButton()
     {
         buttonSound.Play(); // 사운드 재생
+
+        PlayerGimic.isCleared = false;
 
         Time.timeScale = 1; // 일시정지 해제
 
@@ -131,6 +147,8 @@ public class GameManager : MonoBehaviour
     {
         buttonSound.Play(); // 사운드 재생
 
+        PlayerGimic.isCleared = false;
+
         retryReconfirm.SetActive (true); // 다시하기 재확인 UI 활성화
     }
 
@@ -140,6 +158,7 @@ public class GameManager : MonoBehaviour
     {
         buttonSound.Play(); // 사운드 재생
         PlayerGimic.isfailed = false; // bool변수 초기화
+        PlayerGimic.isCleared = false;
 
         Time.timeScale = 1; // 일시정지 해제
         SceneManager.LoadScene("Stage" + stageLevel + "-" + stageDetailLevel); // 기존 스테이지 로드
@@ -149,6 +168,7 @@ public class GameManager : MonoBehaviour
     public void RetryNo()
     {
         buttonSound.Play(); // 사운드 재생
+        PlayerGimic.isCleared = false;
 
         retryReconfirm.SetActive(false); // 다시하기 재확인 UI 비활성화
     }
