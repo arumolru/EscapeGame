@@ -4,29 +4,29 @@ using UnityEngine;
 
 public class PlayerGimic : MonoBehaviour
 {
-    Rigidbody rb; // ÇÃ·¹ÀÌ¾îÀÇ Rigidbody ÄÄÆ÷³ÍÆ®
+    Rigidbody rb; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ Rigidbody ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®
 
-    private float upSpeed = 7f; // ÇÃ·¹ÀÌ¾îÀÇ Á¡ÇÁ ¼Óµµ
-
-    [SerializeField]
-    private GameObject clearUI; // Å¬¸®¾î UI
-    [SerializeField]
-    private GameObject failedUI; // °ÔÀÓ ½ÇÆÐ UI
+    private float upSpeed = 7f; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Óµï¿½
 
     [SerializeField]
-    private AudioSource portalAudio; // Æ÷Å»¿¡ µé¾î°¥ ½Ã »ç¿îµå
+    private GameObject clearUI; // Å¬ï¿½ï¿½ï¿½ï¿½ UI
     [SerializeField]
-    private AudioSource jumpAudio; // Á¡ÇÁ ºí·ÏÀ» ¹â¾ÒÀ» ¶§ÀÇ »ç¿îµå
-    [SerializeField]
-    private AudioSource trapAudio; // Æ®·¦À» ¹â¾ÒÀ» ¶§ÀÇ »ç¿îµå
-    [SerializeField]
-    private AudioSource deleteAudio; // ÇÏ¾á ºí·ÏÀ» ¹â¾ÒÀ» ¶§ÀÇ »ç¿îµå
+    private GameObject failedUI; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UI
 
-    public int stageLevel; // ½ºÅ×ÀÌÁö ·¹º§
-    public int stageDetailLevel; // ½ºÅ×ÀÌÁöÀÇ ¼¼ºÎ ·¹º§
+    [SerializeField]
+    private AudioSource portalAudio; // ï¿½ï¿½Å»ï¿½ï¿½ ï¿½ï¿½î°¥ ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    [SerializeField]
+    private AudioSource jumpAudio; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    [SerializeField]
+    private AudioSource trapAudio; // Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    [SerializeField]
+    private AudioSource deleteAudio; // ï¿½Ï¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-    static public bool isCleared = false; // ½ºÅ×ÀÌÁöÀÇ Å¬¸®¾î ¿©ºÎ
-    static public bool isfailed = false; // ½ºÅ×ÀÌÁöÀÇ ½ÇÆÐ ¿©ºÎ
+    public int stageLevel; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public int stageDetailLevel; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+
+    static public bool isCleared = false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    static public bool isfailed = false; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     private void Start()
     {
@@ -35,39 +35,39 @@ public class PlayerGimic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // ºÓÀº ºí·ÏÀÌ³ª ¶³¾îÁ³À» ¶§ÀÇ ÀÌº¥Æ®
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ì³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½Ìºï¿½Æ®
         if(other.gameObject.CompareTag("TRAPWALL") || other.gameObject.CompareTag("FALLGROUND"))
         {
-            isfailed = true; // °ÔÀÓ ½ÇÆÐ º¯¼ö
+            isfailed = true; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-            failedUI.SetActive(true); // °ÔÀÓ ½ÇÆÐ UI È°¼ºÈ­
+            failedUI.SetActive(true); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ UI È°ï¿½ï¿½È­
 
-            Time.timeScale = 0; // °ÔÀÓ ÀÏ½Ã Á¤Áö
+            Time.timeScale = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
-        // ÇÃ·¹ÀÌ¾î°¡ Æ÷Å»¿¡ ´ê¾ÒÀ» ½Ã
+        // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½Å»ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½
         if(other.gameObject.CompareTag("PORTAL"))
         {
-            clearUI.SetActive(true); // °ÔÀÓ Å¬¸®¾î UI »ý¼º
-            isCleared = true; // °ÔÀÓ Å¬¸®¾î
+            clearUI.SetActive(true); // ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½ï¿½ï¿½
+            isCleared = true; // ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½
 
-            Time.timeScale = 0; // ÀÏ½Ã Á¤Áö
+            Time.timeScale = 0; // ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-            portalAudio.Play(); // »ç¿îµå Àç»ý
+            portalAudio.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         }
     }
 
     private void OnCollisionEnter(Collision collision)
     {
-        // ÇÃ·¹ÀÌ¾î°¡ ÆÄ¶õ ºí·Ï°ú ´ê¾ÒÀ» °æ¿ì
+        // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½Ä¶ï¿½ ï¿½ï¿½Ï°ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         if(collision.gameObject.CompareTag("UPWALL"))
         {
-            rb.AddForce(upSpeed * Vector3.up, ForceMode.Impulse); // ÇÃ·¹ÀÌ¾î Á¡ÇÁ
+            rb.AddForce(upSpeed * Vector3.up, ForceMode.Impulse); // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-            jumpAudio.Play(); // »ç¿îµå Àç»ý
+            jumpAudio.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         }
 
-        // ÇÃ·¹ÀÌ¾î°¡ ÇÏ¾á ºí·ÏÀ» ¹â¾ÒÀ» °æ¿ì
+        // ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½Ï¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         if(collision.gameObject.CompareTag("DELETEWALL"))
         {
             StartCoroutine(DeleteSound());
@@ -78,6 +78,6 @@ public class PlayerGimic : MonoBehaviour
     {
         yield return new WaitForSeconds(1f);
 
-        deleteAudio.Play(); // »ç¿îµå Àç»ý
+        deleteAudio.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
     }
 }

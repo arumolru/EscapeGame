@@ -262,13 +262,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1859702636}
     - target: {fileID: 2377110534177779807, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
+      propertyPath: rotateButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377110534177779807, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
       propertyPath: leftTrunButton
       value: 
-      objectReference: {fileID: 1714009436}
+      objectReference: {fileID: 0}
     - target: {fileID: 2377110534177779807, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
       propertyPath: rightTrunButton
       value: 
-      objectReference: {fileID: 1411414009}
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377110534177779807, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
+      propertyPath: leftRotateButton
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 2377110534177779807, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
+      propertyPath: rightRotateButton
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3902010981734212798, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.18
@@ -1397,19 +1409,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2078950585}
         m_TargetAssemblyTypeName: PlayerCtrl, Assembly-CSharp
-        m_MethodName: TurnRight
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2078950585}
-        m_TargetAssemblyTypeName: PlayerCtrl, Assembly-CSharp
-        m_MethodName: OnRightButtonDown
+        m_MethodName: OnRightButtonUp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1421,7 +1421,7 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2078950585}
         m_TargetAssemblyTypeName: PlayerCtrl, Assembly-CSharp
-        m_MethodName: OnRightButtonUp
+        m_MethodName: OnRightButtonDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -1565,31 +1565,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 2078950585}
         m_TargetAssemblyTypeName: PlayerCtrl, Assembly-CSharp
-        m_MethodName: TurnLeft
-        m_Mode: 6
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2078950585}
-        m_TargetAssemblyTypeName: PlayerCtrl, Assembly-CSharp
-        m_MethodName: OnLeftButtonDown
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 2078950585}
-        m_TargetAssemblyTypeName: PlayerCtrl, Assembly-CSharp
-        m_MethodName: OnLeftButtonUp
+        m_MethodName: LeftRotate
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

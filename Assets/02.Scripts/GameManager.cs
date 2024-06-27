@@ -6,39 +6,39 @@ using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
-    AudioSource buttonSound; // »ç¿îµå º¯¼ö
+    AudioSource buttonSound; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     [SerializeField]
-    private TextMeshProUGUI clearText; // Å¬¸®¾î½Ã¿¡ ³ªÅ¸³ª´Â Å¬¸®¾î ÅØ½ºÆ® º¯¼ö ex) Stage1-1 Clear
+    private TextMeshProUGUI clearText; // Å¬ï¿½ï¿½ï¿½ï¿½Ã¿ï¿½ ï¿½ï¿½Å¸ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ® ï¿½ï¿½ï¿½ï¿½ ex) Stage1-1 Clear
     [SerializeField]
-    private GameObject stageSelectReconfirm; // ½ºÅ×ÀÌÁö ¼±ÅÃ Ã¢À¸·Î °¡´Â ÀçÈ®ÀÎ UIÃ¢
+    private GameObject stageSelectReconfirm; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ UIÃ¢
     [SerializeField]
-    private GameObject lobbyReconfirm; // ·Îºñ Ã¢À¸·Î °¡´Â ÀçÈ®ÀÎ UIÃ¢
+    private GameObject lobbyReconfirm; // ï¿½Îºï¿½ Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ UIÃ¢
     [SerializeField]
-    private GameObject pauseUI; // °ÔÀÓÀ» ÀÏ½ÃÁ¤Áö ÇßÀ» ¶§ ¶ß´Â UI
+    private GameObject pauseUI; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ ï¿½ß´ï¿½ UI
     [SerializeField]
-    private GameObject retryReconfirm; // ¸®Æ®¶óÀÌ ÀçÈ®ÀÎ UI
+    private GameObject retryReconfirm; // ï¿½ï¿½Æ®ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ UI
 
-    public int stageLevel; // ½ºÅ×ÀÌÁö ·¹º§ º¯¼ö
-    public int stageDetailLevel; // ¼¼ºÎ ½ºÅ×ÀÌÁö ·¹º§ º¯¼ö
+    public int stageLevel; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+    public int stageDetailLevel; // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     private void Start()
     {
-        clearText.text = "Stage" + stageLevel + "-" + stageDetailLevel + " Clear"; // °¢ ½ºÅ×ÀÌÁö º°·Î Å¬¸®¾î ÅØ½ºÆ®°¡ ´Ù¸£°Ô ¸¸µê.
+        clearText.text = "Stage" + stageLevel + "-" + stageDetailLevel + " Clear"; // ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ø½ï¿½Æ®ï¿½ï¿½ ï¿½Ù¸ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½.
         buttonSound = GetComponent<AudioSource>();
     }
 
     private void Update()
     {
-        // ÀÏ½ÃÁ¤Áö(ÇÃ·¹ÀÌ¾î°¡ ½ºÅ×ÀÌÁö¸¦ Å¬¸®¾îÇÏ°Å³ª ½ÇÆÐÇÒ ¶§¸¦ Á¦¿ÜÇÏ°í esc¸¦ ´©¸£¸é ÀÏ½ÃÁ¤Áö µÊ)
+        // ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½(ï¿½Ã·ï¿½ï¿½Ì¾î°¡ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ï¿½Ï°Å³ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½Ï°ï¿½ escï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½)
         if(Input.GetKeyDown(KeyCode.Escape) && !PlayerGimic.isCleared && !PlayerGimic.isfailed)
         {
-            pauseUI.SetActive(true); // ÀÏ½ÃÁ¤Áö UI È°¼ºÈ­
+            pauseUI.SetActive(true); // ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ UI È°ï¿½ï¿½È­
 
-            Time.timeScale = 0; // °ÔÀÓ ÀÏ½Ã Á¤Áö
+            Time.timeScale = 0; // ï¿½ï¿½ï¿½ï¿½ ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½
         }
 
-        // ¼¼ÀÌºê ±â´É
+        // ï¿½ï¿½ï¿½Ìºï¿½ ï¿½ï¿½ï¿½
         if(PlayerGimic.isCleared)
         {
             PlayerPrefs.SetInt("Stage" + stageLevel + "-" + stageDetailLevel + "Save", 1);
@@ -46,130 +46,130 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    // ¹Ù·Î ´ÙÀ½ ½ºÅ×ÀÌÁö·Î ³Ñ¾î°¡´Â ¹öÆ°
+    // ï¿½Ù·ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ñ¾î°¡ï¿½ï¿½ ï¿½ï¿½Æ°
     public void NextStageButton()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         PlayerGimic.isCleared = false;
 
-        SceneManager.LoadScene("Stage" + stageLevel + "-" + (stageDetailLevel + 1)); // ´ÙÀ½ ½ºÅ×ÀÌÁö ¾ÀÀ¸·Î ÀÌµ¿
+        SceneManager.LoadScene("Stage" + stageLevel + "-" + (stageDetailLevel + 1)); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
 
-        // ¸¸¾à ¼¼ºÎ ½ºÅ×ÀÌÁö ·¹º§ÀÌ 10ÀÏ °æ¿ì ½ºÅ×ÀÌÁö + 1 ex) 1-10À» Å¬¸®¾î ÇÏ¸é 2-1·Î ÀÌµ¿
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ 10ï¿½ï¿½ ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ + 1 ex) 1-10ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½Ï¸ï¿½ 2-1ï¿½ï¿½ ï¿½Ìµï¿½
         if (stageDetailLevel == 10)
         {
             SceneManager.LoadScene("Stage" + (stageLevel + 1) + "-" + 1);
         }
 
-        // ÀÏ½Ã Á¤Áö ÇØÁ¦
+        // ï¿½Ï½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         Time.timeScale = 1;
     }
 
-    // ½ºÅ×ÀÌÁö ¼±ÅÃÃ¢À¸·Î ÀÌµ¿ÇÏ´Â ¹öÆ°
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Æ°
     public void StageSelectButton()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         PlayerGimic.isCleared = false;
 
-        stageSelectReconfirm.SetActive(true); // ½ºÅ×ÀÌÁö ¼±ÅÃÃ¢À¸·Î °¡´ÂÁö ÀçÈ®ÀÎÇÏ´Â UI È°¼ºÈ­
+        stageSelectReconfirm.SetActive(true); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ï¿½Ï´ï¿½ UI È°ï¿½ï¿½È­
     }
 
-    // ·ÎºñÃ¢À¸·Î ÀÌµ¿ÇÏ´Â ¹öÆ°
+    // ï¿½Îºï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Æ°
     public void LobbyButton()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         PlayerGimic.isCleared = false;
 
-        lobbyReconfirm.SetActive(true); // ·ÎºñÃ¢À¸·Î °¡´ÂÁö ÀçÈ®ÀÎÇÏ´Â UIÈ°¼ºÈ­
+        lobbyReconfirm.SetActive(true); // ï¿½Îºï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ï¿½Ï´ï¿½ UIÈ°ï¿½ï¿½È­
     }
 
 
-    // ½ºÅ×ÀÌÁö ¼±ÅÃÃ¢ ÀçÈ®ÀÎ UI¿¡¼­ ½ºÅ×ÀÌÁö ¼±ÅÃÃ¢À¸·Î ÀÌµ¿ÇÏ´Â ¹öÆ°
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ ï¿½ï¿½È®ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½ï¿½Ï´ï¿½ ï¿½ï¿½Æ°
     public void RealStageSelect()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         PlayerGimic.isCleared = false;
 
-        Time.timeScale = 1; // ÀÏ½ÃÁ¤Áö ÇØÁ¦
+        Time.timeScale = 1; // ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        SceneManager.LoadScene("StageSelect"); // ½ºÅ×ÀÌÁö ¼±ÅÃ¾ÀÀ¸·Î ÀÌµ¿
+        SceneManager.LoadScene("StageSelect"); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Ã¾ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
     }
 
-    // ½ºÅ×ÀÌÁö ¼±ÅÃÃ¢ ÀçÈ®ÀÎ UI¿¡¼­ÀÇ No¹öÆ°
+    // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½Ã¢ ï¿½ï¿½È®ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Noï¿½ï¿½Æ°
     public void StageSelectNo()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         PlayerGimic.isCleared = false;
 
-        stageSelectReconfirm.SetActive(false); // ½ºÅ×ÀÌÁö ¼±ÅÃ ÀçÈ®ÀÎ UI ºñÈ°¼ºÈ­
+        stageSelectReconfirm.SetActive(false); // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½È®ï¿½ï¿½ UI ï¿½ï¿½È°ï¿½ï¿½È­
     }
 
-    // ·Îºñ ÀçÈ®ÀÎ UI¿¡¼­ÀÇ Lobby ¹öÆ°
+    // ï¿½Îºï¿½ ï¿½ï¿½È®ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Lobby ï¿½ï¿½Æ°
     public void RealLobby()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         PlayerGimic.isCleared = false;
 
-        Time.timeScale = 1; // ÀÏ½ÃÁ¤Áö ÇØÁ¦
+        Time.timeScale = 1; // ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        SceneManager.LoadScene("Lobby"); // ·Îºñ ¾ÀÀ¸·Î ÀÌµ¿
+        SceneManager.LoadScene("Lobby"); // ï¿½Îºï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ìµï¿½
     }
 
-    // ·Îºñ ÀçÈ®ÀÎ UI¿¡¼­ÀÇ No¹öÆ°
+    // ï¿½Îºï¿½ ï¿½ï¿½È®ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Noï¿½ï¿½Æ°
     public void LobbyNo()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         PlayerGimic.isCleared = false;
 
-        lobbyReconfirm .SetActive(false); // ·Îºñ ÀçÈ®ÀÎ UI ºñÈ°¼ºÈ­
+        lobbyReconfirm .SetActive(false); // ï¿½Îºï¿½ ï¿½ï¿½È®ï¿½ï¿½ UI ï¿½ï¿½È°ï¿½ï¿½È­
     }
 
-    // ÀÌ¾î¼­ ÇÏ±â ¹öÆ°
+    // ï¿½Ì¾î¼­ ï¿½Ï±ï¿½ ï¿½ï¿½Æ°
     public void ResumeButton()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         PlayerGimic.isCleared = false;
 
-        Time.timeScale = 1; // ÀÏ½ÃÁ¤Áö ÇØÁ¦
+        Time.timeScale = 1; // ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        pauseUI.SetActive (false); // ÀÏ½ÃÁ¤Áö UI ºñÈ°¼ºÈ­
+        pauseUI.SetActive (false); // ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ UI ï¿½ï¿½È°ï¿½ï¿½È­
     }
 
-    // ´Ù½ÃÇÏ±â ¹öÆ°
+    // ï¿½Ù½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½Æ°
     public void RetryButton()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
 
         PlayerGimic.isCleared = false;
 
-        retryReconfirm.SetActive (true); // ´Ù½ÃÇÏ±â ÀçÈ®ÀÎ UI È°¼ºÈ­
+        retryReconfirm.SetActive (true); // ï¿½Ù½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½È®ï¿½ï¿½ UI È°ï¿½ï¿½È­
     }
 
 
-    // ´Ù½ÃÇÏ±â ÀçÈ®ÀÎ UI¿¡¼­ÀÇ ´Ù½ÃÇÏ±â ¹öÆ°
+    // ï¿½Ù½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½È®ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Ù½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½Æ°
     public void RealRetry()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
-        PlayerGimic.isfailed = false; // boolº¯¼ö ÃÊ±âÈ­
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
+        PlayerGimic.isfailed = false; // boolï¿½ï¿½ï¿½ï¿½ ï¿½Ê±ï¿½È­
         PlayerGimic.isCleared = false;
 
-        Time.timeScale = 1; // ÀÏ½ÃÁ¤Áö ÇØÁ¦
-        SceneManager.LoadScene("Stage" + stageLevel + "-" + stageDetailLevel); // ±âÁ¸ ½ºÅ×ÀÌÁö ·Îµå
+        Time.timeScale = 1; // ï¿½Ï½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
+        SceneManager.LoadScene("Stage" + stageLevel + "-" + stageDetailLevel); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Îµï¿½
     }
 
-    // ´Ù½ÃÇÏ±â ÀçÈ®ÀÎ UI¿¡¼­ÀÇ No ¹öÆ°
+    // ï¿½Ù½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½È®ï¿½ï¿½ UIï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ No ï¿½ï¿½Æ°
     public void RetryNo()
     {
-        buttonSound.Play(); // »ç¿îµå Àç»ý
+        buttonSound.Play(); // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½
         PlayerGimic.isCleared = false;
 
-        retryReconfirm.SetActive(false); // ´Ù½ÃÇÏ±â ÀçÈ®ÀÎ UI ºñÈ°¼ºÈ­
+        retryReconfirm.SetActive(false); // ï¿½Ù½ï¿½ï¿½Ï±ï¿½ ï¿½ï¿½È®ï¿½ï¿½ UI ï¿½ï¿½È°ï¿½ï¿½È­
     }
 }

@@ -5,41 +5,41 @@ using UnityEngine;
 public class CameraMove : MonoBehaviour
 {
     [SerializeField]
-    private Transform player; // ÇÃ·¹ÀÌ¾îÀÇ À§Ä¡ º¯¼ö
+    private Transform player; // ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
 
-    public float distance = 3f; // Ä«¸Þ¶ó¿Í ÇÃ·¹ÀÌ¾î »çÀÌÀÇ °Å¸®
-    public float height = 1.5f; // Ä«¸Þ¶óÀÇ ³ôÀÌ
+    public float distance = 3f; // Ä«ï¿½Þ¶ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Å¸ï¿½
+    public float height = 1.5f; // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
     public float rotationDamping = 3.0f; 
     public float heightDamping = 2.0f;
 
     void LateUpdate()
     {
-        // ¿¡·¯ Â÷´Ü
+        // ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
         if (!player)
             return;
 
-        float wantedRotationAngle = player.eulerAngles.y; // È¸Àü°¢ = ÇÃ·¹ÀÌ¾îÀÇ yÃà
-        float wantedHeight = player.position.y + height; // ³ôÀÌ = ÇÃ·¹ÀÌ¾îÀÇ yÃà + ³ôÀÌ
+        float wantedRotationAngle = player.eulerAngles.y; // È¸ï¿½ï¿½ï¿½ï¿½ = ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ yï¿½ï¿½
+        float wantedHeight = player.position.y + height; // ï¿½ï¿½ï¿½ï¿½ = ï¿½Ã·ï¿½ï¿½Ì¾ï¿½ï¿½ï¿½ yï¿½ï¿½ + ï¿½ï¿½ï¿½ï¿½
 
-        float currentRotationAngle = transform.eulerAngles.y; // ÇöÀçÀÇ ¾Þ±Û º¯¼ö
-        float currentHeight = transform.position.y; // ÇöÀçÀÇ ³ôÀÌ º¯¼ö
+        float currentRotationAngle = transform.eulerAngles.y; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Þ±ï¿½ ï¿½ï¿½ï¿½ï¿½
+        float currentHeight = transform.position.y; // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½
 
-        // ¾Þ±Û °¢
+        // ï¿½Þ±ï¿½ ï¿½ï¿½
         currentRotationAngle = Mathf.LerpAngle(currentRotationAngle, wantedRotationAngle, rotationDamping * Time.deltaTime);
 
-        // ³ôÀÌ
+        // ï¿½ï¿½ï¿½ï¿½
         currentHeight = Mathf.Lerp(currentHeight, wantedHeight, heightDamping * Time.deltaTime);
 
-        // È¸Àü °ª
+        // È¸ï¿½ï¿½ ï¿½ï¿½
         Quaternion currentRotation = Quaternion.Euler(0, currentRotationAngle, 0);
 
-        // Ä«¸Þ¶óÀÇ À§Ä¡ Á¶Á¤
+        // Ä«ï¿½Þ¶ï¿½ï¿½ï¿½ ï¿½ï¿½Ä¡ ï¿½ï¿½ï¿½ï¿½
         transform.position = player.position;
         transform.position -= currentRotation * Vector3.forward * distance;
         transform.position = new Vector3(transform.position.x, currentHeight, transform.position.z);
 
-        // Ä«¸Þ¶ó´Â ÇÃ·¹ÀÌ¾î¸¦ ¹Ù¶óº¸°Ô ¼³Á¤
+        // Ä«ï¿½Þ¶ï¿½ï¿½ ï¿½Ã·ï¿½ï¿½Ì¾î¸¦ ï¿½Ù¶óº¸°ï¿½ ï¿½ï¿½ï¿½ï¿½
         transform.LookAt(player);
     }
 }
