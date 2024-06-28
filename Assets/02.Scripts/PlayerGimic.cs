@@ -4,29 +4,28 @@ using UnityEngine;
 
 public class PlayerGimic : MonoBehaviour
 {
-    Rigidbody rb; // �÷��̾��� Rigidbody ������Ʈ
+    Rigidbody rb; // 플레이어 Rigidbody
 
-    private float upSpeed = 7f; // �÷��̾��� ���� �ӵ�
-
-    [SerializeField]
-    private GameObject clearUI; // Ŭ���� UI
-    [SerializeField]
-    private GameObject failedUI; // ���� ���� UI
+    private float upSpeed = 7f; // 플레이어의 점프력 변수
 
     [SerializeField]
-    private AudioSource portalAudio; // ��Ż�� �� �� ����
+    private GameObject clearUI; // 클리어 UI
     [SerializeField]
-    private AudioSource jumpAudio; // ���� ����� ����� ���� ����
+    private GameObject failedUI; // 실패 UI
     [SerializeField]
-    private AudioSource trapAudio; // Ʈ���� ����� ���� ����
-    [SerializeField]
-    private AudioSource deleteAudio; // �Ͼ� ����� ����� ���� ����
+    private GameObject CtrlUI; // 컨트롤 패드 UI
 
-    public int stageLevel; // �������� ����
-    public int stageDetailLevel; // ���������� ���� ����
+    [SerializeField]
+    private AudioSource portalAudio; // 포탈에 닿았을 때 사운드
+    [SerializeField]
+    private AudioSource jumpAudio; // 점프 사운드
+    [SerializeField]
+    private AudioSource trapAudio; // 트랩 사운드
+    [SerializeField]
+    private AudioSource deleteAudio; // 사라지는 발판의 오디오
 
-    static public bool isCleared = false; // ���������� Ŭ���� ����
-    static public bool isfailed = false; // ���������� ���� ����
+    static public bool isCleared = false; // 스테이지 클리어 여부
+    static public bool isfailed = false; // 스테이지 실패 여부
 
     private void Start()
     {
@@ -35,25 +34,28 @@ public class PlayerGimic : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        // ���� ����̳� �������� ���� �̺�Ʈ
+        // 게임 오버(트랩 또는 떨어졌을 경우)
         if(other.gameObject.CompareTag("TRAPWALL") || other.gameObject.CompareTag("FALLGROUND"))
         {
-            isfailed = true; // ���� ���� ����
+            isfailed = true; // 스테이지 실패 여부를 true로
 
-            failedUI.SetActive(true); // ���� ���� UI Ȱ��ȭ
+            failedUI.SetActive(true); // 실패 UI를 활성화
+            CtrlUI.SetActive(false); // 컨트롤 패드 비활성화
 
-            Time.timeScale = 0; // ���� �Ͻ� ����
+            Time.timeScale = 0; // 게임 일시 정지
         }
 
-        // �÷��̾ ��Ż�� ����� ��
+        // 게임 클리어(포탈에 닿았을 경우)
         if(other.gameObject.CompareTag("PORTAL"))
         {
-            clearUI.SetActive(true); // ���� Ŭ���� UI ����
-            isCleared = true; // ���� Ŭ����
+            clearUI.SetActive(true); // 클리어 UI 활성화
+            isCleared = true; // 스테이지 클리어 여부를 true로
 
-            Time.timeScale = 0; // �Ͻ� ����
+            CtrlUI.SetActive(false); // 컨트롤 패드 비활성화
 
-            portalAudio.Play(); // ���� ���
+            Time.timeScale = 0; // 게임 일시 정지
+
+            portalAudio.Play(); // 사운드 재생
         }
     }
 

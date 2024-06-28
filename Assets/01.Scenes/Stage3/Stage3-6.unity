@@ -300,6 +300,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 2377110534177779807, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
+      propertyPath: joystick
+      value: 
+      objectReference: {fileID: 539741825}
     - target: {fileID: 3902010981734212798, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04
@@ -341,6 +345,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4979357805751663740, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
+      propertyPath: CtrlUI
+      value: 
+      objectReference: {fileID: 539741827}
+    - target: {fileID: 4979357805751663740, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
       propertyPath: clearUI
       value: 
       objectReference: {fileID: 1125202153}
@@ -373,6 +381,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
+--- !u!114 &100743105 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 2377110534177779807, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
+  m_PrefabInstance: {fileID: 100743104}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea00200f07f72d348bad3e4d2807aa98, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &112557324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -934,6 +953,22 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
       objectReference: {fileID: 1521268924}
+    - target: {fileID: 4780523727248606974, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 100743105}
+    - target: {fileID: 4780523727248606974, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: RightRotate
+      objectReference: {fileID: 0}
+    - target: {fileID: 4806554958494805411, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 100743105}
+    - target: {fileID: 4806554958494805411, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: LeftRotate
+      objectReference: {fileID: 0}
     - target: {fileID: 4932925085632055571, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -1059,6 +1094,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}
+--- !u!114 &539741825 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8542656279928098618, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}
+  m_PrefabInstance: {fileID: 539741824}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 29ea4e53569c9d84483179f803d00a4b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &539741826 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7742743705234629522, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}
@@ -1070,6 +1116,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &539741827 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1062473129543697295, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}
+  m_PrefabInstance: {fileID: 539741824}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &540826116 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3530827917333040974, guid: d6be595ff3fe10744b3707b6deb0f8dd, type: 3}

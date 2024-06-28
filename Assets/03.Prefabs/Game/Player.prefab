@@ -120,6 +120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ea00200f07f72d348bad3e4d2807aa98, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  joystick: {fileID: 0}
 --- !u!54 &7020798409469579332
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -166,4 +167,4 @@ MonoBehaviour:
   trapAudio: {fileID: 0}
   deleteAudio: {fileID: 0}
   stageLevel: 1
-  stageDetailLevel: 10
+  stageDetailLevel: 1
