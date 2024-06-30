@@ -12,8 +12,6 @@ public class PlayerGimic : MonoBehaviour
     private GameObject clearUI; // 클리어 UI
     [SerializeField]
     private GameObject failedUI; // 실패 UI
-    [SerializeField]
-    private GameObject CtrlUI; // 컨트롤 패드 UI
 
     [SerializeField]
     private AudioSource portalAudio; // 포탈에 닿았을 때 사운드
@@ -30,6 +28,10 @@ public class PlayerGimic : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody>();
+
+        Cursor.visible = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -39,8 +41,10 @@ public class PlayerGimic : MonoBehaviour
         {
             isfailed = true; // 스테이지 실패 여부를 true로
 
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
+
             failedUI.SetActive(true); // 실패 UI를 활성화
-            CtrlUI.SetActive(false); // 컨트롤 패드 비활성화
 
             Time.timeScale = 0; // 게임 일시 정지
         }
@@ -51,7 +55,8 @@ public class PlayerGimic : MonoBehaviour
             clearUI.SetActive(true); // 클리어 UI 활성화
             isCleared = true; // 스테이지 클리어 여부를 true로
 
-            CtrlUI.SetActive(false); // 컨트롤 패드 비활성화
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
 
             Time.timeScale = 0; // 게임 일시 정지
 

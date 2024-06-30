@@ -5,100 +5,100 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Lobby.unity
     guid: 5e358a03bfd45be40acdc6edb73c4bdc
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/StageSelect.unity
     guid: 33b6deb09b111cb40a4ab9f6579f2c92
   - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-1.unity
     guid: 717efea069bfda64386fb40fdfdb85b6
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-2.unity
     guid: df64c27aafa4aaf468e246c073579585
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-3.unity
     guid: 3fca6a2d510bdce45a6f85f4ad1363be
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-4.unity
     guid: ad9ccb31990b879488db2f0d3e5bfb7a
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-5.unity
     guid: 1fa830614fa7abc4fb02cb55d3bbe6e0
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-6.unity
     guid: 60dc0a5ea1250174b9274ca850f4b832
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-7.unity
     guid: df46ced19d5977a4e8220e7b7d41b12a
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-8.unity
     guid: 2ab5ea0a89ea1c84196e611ec9ea70d8
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-9.unity
     guid: 60fd94b273caeaa43b31fc2c820b8072
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage1/Stage1-10.unity
     guid: ac6b8726cc7dc6148b8aa9b4d74bce0e
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-1.unity
     guid: 920dfcfe97d42ac45846b9b9ccd24136
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-2.unity
     guid: c701bc0a166a21c40918fa50503ada94
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-3.unity
     guid: e8d4bb640bdc37c47b3537a839be5177
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-4.unity
     guid: a2e53a583c8c9194e86ca2e580e8bd2e
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-5.unity
     guid: 22ffd2f5216279f439e1dc3d27fb19b5
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-6.unity
     guid: e999e4dda0a821e418889de26b077366
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-7.unity
     guid: cada0c0b78d1102409f7c3acb27d2e86
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-8.unity
     guid: 89e6e34f7157cdd4ab63599047e2a4df
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-9.unity
     guid: 478628f67a2f9f344ba0e6b80280037f
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage2/Stage2-10.unity
     guid: dd5f27c1c5c72b042a4a42868c0e0c6a
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-1.unity
     guid: d38653e8d3d61be4aa18fe161affd763
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-2.unity
     guid: d2bb7082a4ac2b548936de0f5ac44208
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-3.unity
     guid: 2b259b8df767f954a902c0600c4cf148
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-4.unity
     guid: 45aaf621b0aef3649879201c2ecf291b
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-5.unity
     guid: adf3180c15bff9549b9f3ec8b8f9fb09
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-6.unity
     guid: 7252eacd8a21c074b958845c195a8be5
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-7.unity
     guid: 62e524b2ff4fd9f4e8c14c2cca51ac1e
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-8.unity
     guid: 67c98b7c85f07d044ad231d038170ff8
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-9.unity
     guid: ddc926307e4d67048824dcc3bf8cf550
-  - enabled: 0
+  - enabled: 1
     path: Assets/01.Scenes/Stage3/Stage3-10.unity
     guid: f307f10686a3217459e87c72d0161b90
   m_configObjects: {}

@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
             pauseUI.SetActive(true); // �Ͻ����� UI Ȱ��ȭ
 
             Time.timeScale = 0; // ���� �Ͻ� ����
+
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
 
         // ���̺� ���
@@ -136,6 +139,10 @@ public class GameManager : MonoBehaviour
         buttonSound.Play(); // ���� ���
 
         PlayerGimic.isCleared = false;
+
+        Cursor.visible = false;
+
+        Cursor.lockState = CursorLockMode.Locked;
 
         Time.timeScale = 1; // �Ͻ����� ����
 
