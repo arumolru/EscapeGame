@@ -30,7 +30,7 @@ public class StageSelectManager : MonoBehaviour
 
     private void Update()
     {
-        if(stageSelectIndex==2)
+        if(stageSelectIndex==3)
         {
             nextButton.interactable = false;
         }
@@ -279,5 +279,65 @@ public class StageSelectManager : MonoBehaviour
     {
         buttonSound.Play();
         SceneManager.LoadScene("Stage3-10");
+    }
+
+    public void Stage4_1()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-1");
+    }
+
+    public void Stage4_2()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-2");
+    }
+
+    public void Stage4_3()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-3");
+    }
+
+    public void Stage4_4()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-4");
+    }
+
+    public void Stage4_5()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-5");
+    }
+
+    public void Stage4_6()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-6");
+    }
+
+    public void Stage4_7()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-7");
+    }
+
+    public void Stage4_8()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-8");
+    }
+
+    public void Stage4_9()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-9");
+    }
+
+    public void Stage4_10()
+    {
+        buttonSound.Play();
+        SceneManager.LoadScene("Stage4-10");
     }
 }
