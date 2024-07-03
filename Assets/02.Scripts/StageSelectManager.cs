@@ -51,10 +51,10 @@ public class StageSelectManager : MonoBehaviour
 
     void UpdateStageButton()
     {
-        // stageButtonÀÇ °³¼ö¸¸Å­ ¹Ýº¹
+        // stageButtonï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Å­ ï¿½Ýºï¿½
         for(int i= 0; i<stageButton.Length; i++)
         {
-            // 1-1½ºÅ×ÀÌÁö ¹öÆ°Àº »ó½Ã È°¼ºÈ­
+            // 1-1ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ°ï¿½ï¿½ ï¿½ï¿½ï¿½ È°ï¿½ï¿½È­
             if (i == 0)
             {
                 stageButton[i].interactable = true;
@@ -63,12 +63,12 @@ public class StageSelectManager : MonoBehaviour
 
             if (stageButton[i] != null)
             {
-                // ½ºÅ×ÀÌÁöÀÇ Å¬¸®¾î Á¤º¸ °¡Á®¿À±â
+                // ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
                 int stageLevel = (i / totalStages) + 1;
                 int stageDetailLevel = (i % totalStages) + 1;
                 int cleared = PlayerPrefs.GetInt("Stage" + stageLevel + "-" + stageDetailLevel + "Save", 0);
 
-                // Å¬¸®¾î ¿©ºÎ¿¡ µû¶ó ½ºÅ×ÀÌÁö ¹öÆ° È°¼ºÈ­
+                // Å¬ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½Î¿ï¿½ ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½ï¿½Æ° È°ï¿½ï¿½È­
                 if (cleared == 1)
                 {
                     stageButton[i + 1].interactable = true;

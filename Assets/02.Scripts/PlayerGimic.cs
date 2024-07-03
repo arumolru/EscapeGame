@@ -29,9 +29,9 @@ public class PlayerGimic : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
 
-        Cursor.visible = false;
+        //Cursor.visible = false;
 
-        Cursor.lockState = CursorLockMode.Locked;
+        //Cursor.lockState = CursorLockMode.Locked;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -41,8 +41,8 @@ public class PlayerGimic : MonoBehaviour
         {
             isfailed = true; // 스테이지 실패 여부를 true로
 
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
 
             failedUI.SetActive(true); // 실패 UI를 활성화
 
@@ -55,8 +55,8 @@ public class PlayerGimic : MonoBehaviour
             clearUI.SetActive(true); // 클리어 UI 활성화
             isCleared = true; // 스테이지 클리어 여부를 true로
 
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
+            //Cursor.visible = true;
+            //Cursor.lockState = CursorLockMode.None;
 
             Time.timeScale = 0; // 게임 일시 정지
 

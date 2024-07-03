@@ -267,6 +267,10 @@ PrefabInstance:
       propertyPath: joystick
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 2377110534177779807, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
+      propertyPath: rotateSpeed
+      value: 60000
+      objectReference: {fileID: 0}
     - target: {fileID: 3902010981734212798, guid: 39599b73208958642aabfcf80aa89e03, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.04
@@ -1387,6 +1391,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 328651722741104897, guid: 719051f9a5e4cac4098d872be567b596, type: 3}
+      propertyPath: m_Constraints
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 328651722741104897, guid: 719051f9a5e4cac4098d872be567b596, type: 3}
       propertyPath: m_IsKinematic
       value: 1
