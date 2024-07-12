@@ -12,6 +12,7 @@ TagManager:
   - PORTAL
   - FALLGROUND
   - MOVECUBE
+  - GROUND
   layers:
   - Default
   - TransparentFX

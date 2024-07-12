@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class YMoveCube : MonoBehaviour
 {
-    private float moveSpeed = 3f;
+    private float moveSpeed = 2f;
 
     private bool isCrash = false;
 
@@ -23,6 +23,14 @@ public class YMoveCube : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
         if (other.gameObject.CompareTag("MOVECUBE"))
+        {
+            isCrash = !isCrash;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.gameObject.CompareTag("GROUND") || collision.gameObject.CompareTag("DELETEWALL"))
         {
             isCrash = !isCrash;
         }
